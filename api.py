@@ -52,9 +52,9 @@ print(vector)
 #Esta cadena tomará una pregunta entrante, buscará documentos relevantes,
 #luego pasará esos documentos junto con la pregunta original a un LLM y le pedirá que responda la pregunta original.
 
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
+from langchain_core.prompts import ChatPromptTemplate
+from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.documents import Document
 
 # Crear cadena de documentos
@@ -88,3 +88,4 @@ while True:
     
     # Imprimir la respuesta del modelo
     print("Model:", response["answer"])
+

@@ -48,17 +48,6 @@ retriever = vector.as_retriever()
 # Crear la cadena de recuperación
 retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
-while True:
-    user_input = input("You: ")
-    
-    # Si el usuario ingresa "exit", salir del bucle
-    if user_input.lower() == "exit":
-        break
-    
-    # Invocar la cadena de recuperación con la pregunta del usuario
-    response = retrieval_chain.invoke({
-        "input": user_input
-    })
-    
-    #respuesta
-    print("Model:", response["answer"])
+def call_api_IA(user_input):
+    response = retrieval_chain.invoke({"input": user_input})
+    return response
